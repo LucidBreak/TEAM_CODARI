@@ -13,7 +13,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("CODARI_COMMIT_TEST")
+            Text("CODARI_COMMIT_TEST_2")
         }
         .padding()
     }
