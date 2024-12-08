@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4EABA2A92D05D584001FBCE1 /* ProgressViewWithPercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABA2A82D05D584001FBCE1 /* ProgressViewWithPercentage.swift */; };
+		4EABA2AE2D05EDC8001FBCE1 /* FaceIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABA2AD2D05EDC8001FBCE1 /* FaceIDService.swift */; };
+		4EABA2B02D05EDED001FBCE1 /* FaceIDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABA2AF2D05EDED001FBCE1 /* FaceIDViewModel.swift */; };
 		4EEF8BC32CF8449000A09064 /* CODARIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8BC22CF8449000A09064 /* CODARIApp.swift */; };
 		4EEF8BC52CF8449000A09064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8BC42CF8449000A09064 /* ContentView.swift */; };
 		4EEF8BC72CF8449400A09064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF8BC62CF8449400A09064 /* Assets.xcassets */; };
@@ -35,7 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4EABA2A82D05D584001FBCE1 /* ProgressViewWithPercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewWithPercentage.swift; sourceTree = "<group>"; };
+		4EABA2AC2D05DFD7001FBCE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4EABA2AD2D05EDC8001FBCE1 /* FaceIDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDService.swift; sourceTree = "<group>"; };
+		4EABA2AF2D05EDED001FBCE1 /* FaceIDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDViewModel.swift; sourceTree = "<group>"; };
 		4EEF8BBF2CF8449000A09064 /* CODARI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CODARI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EEF8BC22CF8449000A09064 /* CODARIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODARIApp.swift; sourceTree = "<group>"; };
 		4EEF8BC42CF8449000A09064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EABA2B12D05EE53001FBCE1 /* FACE_ID */ = {
+			isa = PBXGroup;
+			children = (
+				4EABA2AD2D05EDC8001FBCE1 /* FaceIDService.swift */,
+				4EABA2AF2D05EDED001FBCE1 /* FaceIDViewModel.swift */,
+			);
+			path = FACE_ID;
+			sourceTree = "<group>";
+		};
 		4EEF8BB62CF8449000A09064 = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +108,10 @@
 		4EEF8BC12CF8449000A09064 /* CODARI */ = {
 			isa = PBXGroup;
 			children = (
+				4EABA2B12D05EE53001FBCE1 /* FACE_ID */,
+				4EABA2AC2D05DFD7001FBCE1 /* Info.plist */,
 				4EEF8BC22CF8449000A09064 /* CODARIApp.swift */,
 				4EEF8BC42CF8449000A09064 /* ContentView.swift */,
-				4EABA2A82D05D584001FBCE1 /* ProgressViewWithPercentage.swift */,
 				4EEF8BC62CF8449400A09064 /* Assets.xcassets */,
 				4EEF8BC82CF8449400A09064 /* Preview Content */,
 			);
@@ -260,9 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EABA2B02D05EDED001FBCE1 /* FaceIDViewModel.swift in Sources */,
 				4EEF8BC52CF8449000A09064 /* ContentView.swift in Sources */,
 				4EEF8BC32CF8449000A09064 /* CODARIApp.swift in Sources */,
-				4EABA2A92D05D584001FBCE1 /* ProgressViewWithPercentage.swift in Sources */,
+				4EABA2AE2D05EDC8001FBCE1 /* FaceIDService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +442,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CODARI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CODARI/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "앱 잠금 해제 위해 사용";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -456,6 +472,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CODARI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CODARI/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "앱 잠금 해제 위해 사용";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

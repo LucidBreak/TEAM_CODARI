@@ -3,46 +3,42 @@
 //  CODARI
 //
 //  Created by 김준서 on 2024/11/28.
+
 import SwiftUI
 
 struct ContentView: View {
-    @State private var progress: Float = 0.0 // 프로그레스 상태
-    @State private var inputText: String = "" // 입력받을 텍스트 상태
-
+    
+    @StateObject private var viewModel = FaceIDViewModel()
+    
     var body: some View {
         VStack {
-            // ProgressViewWithPercentage 사용
-            ProgressViewWithPercentage(progress: $progress)
-
-            // 입력 창
-            TextField("Enter progress (0 to 100)", text: $inputText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)
-                .padding()
-
-            Button(action: {
-                if let input = Float(inputText), input >= 0, input <= 100 {
-                    progress = input / 100 // 퍼센트 값을 진행률로 변환
+            // 토글 UI
+            Toggle(isOn: $viewModel.isFaceIDEnabled) {
+                Text("Face ID 사용")
+                    .font(.title)
+            }
+            .padding()
+            .onChange(of: viewModel.isFaceIDEnabled) { newValue in
+                if newValue {
+                    viewModel.authenticateWithFaceID()
                 } else {
-                    // 유효하지 않은 입력에 대한 기본 처리
-                    inputText = ""
+                    viewModel.authenticationStatus = "Face ID 사용 안 함"
                 }
-            }) {
-                Text("Set Progress")
             }
-            .padding()
-
-            Button(action: {
-                progress = 0.0 // 진행률 초기화
-                inputText = "" // 입력 텍스트 초기화
-            }) {
-                Text("Reset Progress")
-            }
-            .padding()
+            
+            // 인증 상태 표시
+            Text(viewModel.authenticationStatus)
+                .font(.headline)
+                .padding()
         }
-        .padding()
+        .onAppear {
+            viewModel.checkFaceIDAvailability()
+            // 앱이 foreground로 돌아올 때마다 인증을 시도
+            viewModel.authenticateWithFaceID()
+        }
     }
 }
+
 
 
 #Preview {
