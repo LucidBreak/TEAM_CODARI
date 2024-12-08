@@ -7,7 +7,6 @@
 
 import LocalAuthentication
 
-// Face ID 인증을 관리하는 서비스
 class FaceIDService {
     
     // Face ID 사용 가능 여부 확인
@@ -45,5 +44,15 @@ class FaceIDService {
                 }
             }
         }
+    }
+    
+    // Face ID 토글 상태 저장
+    func saveFaceIDState(isEnabled: Bool) {
+        UserDefaults.standard.set(isEnabled, forKey: "isFaceIDEnabled")
+    }
+    
+    // Face ID 토글 상태 불러오기
+    func getFaceIDState() -> Bool {
+        return UserDefaults.standard.bool(forKey: "isFaceIDEnabled")
     }
 }

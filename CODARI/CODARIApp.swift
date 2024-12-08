@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-@main
-struct CODARIApp: App {
+@main struct CODARIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
