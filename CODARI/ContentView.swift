@@ -1,49 +1,187 @@
-//
-//  ContentView.swift
-//  CODARI
-//
-//  Created by 김준서 on 2024/11/28.
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
-    @State private var progress: Float = 0.0 // 프로그레스 상태
-    @State private var inputText: String = "" // 입력받을 텍스트 상태
-
+    @State private var conditionMet = 0
+    private let challengeText_1 = "도전과제: 레벨테스트를 완료하였다"
+    private let challengeText_2 = "도전과제: c언어 진행률 100%를 달성하였다"
+    private let challengeText_3 = "도전과제: 자바 진행률 100%를 달성하였다"
+    private let challengeText_4 = "도전과제: 파이썬 진행률 100%를 달성하였다"
+    private let challengeText_5 = "도전과제: ai한테 첫 질문하기를 달성하였다"
+    @State private var showAlert = false
+    
     var body: some View {
         VStack {
-            // ProgressViewWithPercentage 사용
-            ProgressViewWithPercentage(progress: $progress)
-
-            // 입력 창
-            TextField("Enter progress (0 to 100)", text: $inputText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)
-                .padding()
-
-            Button(action: {
-                if let input = Float(inputText), input >= 0, input <= 100 {
-                    progress = input / 100 // 퍼센트 값을 진행률로 변환
-                } else {
-                    // 유효하지 않은 입력에 대한 기본 처리
-                    inputText = ""
-                }
-            }) {
-                Text("Set Progress")
+            // 조건에 따라 출력되는 텍스트
+            if conditionMet == 1 {
+                Text("조건이 달성되었습니다!")
+                    .font(.title)
+                    .foregroundColor(.green)
+                    .onAppear {
+                        pushNotification(
+                            title: "Hello!",
+                            body: challengeText_1,
+                            seconds: 1,
+                            identifier: "testNotification"
+                        )
+                    }
+                Text(challengeText_1)
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding(.top, 5)
+                
             }
-            .padding()
-
-            Button(action: {
-                progress = 0.0 // 진행률 초기화
-                inputText = "" // 입력 텍스트 초기화
-            }) {
-                Text("Reset Progress")
+            
+            if conditionMet == 2 {
+                Text("조건이 달성되었습니다!")
+                    .font(.title)
+                    .foregroundColor(.green)
+                    .onAppear {
+                        pushNotification(
+                            title: "Hello!",
+                            body: challengeText_2,
+                            seconds: 1,
+                            identifier: "testNotification"
+                        )
+                    }
+                Text(challengeText_2)
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding(.top, 5)
+                
             }
-            .padding()
+            
+            if conditionMet == 3 {
+                Text("조건이 달성되었습니다!")
+                    .font(.title)
+                    .foregroundColor(.green)
+                    .onAppear {
+                        pushNotification(
+                            title: "Hello!",
+                            body: challengeText_3,
+                            seconds: 1,
+                            identifier: "testNotification"
+                        )
+                    }
+                Text(challengeText_3)
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding(.top, 5)
+                
+            }
+            
+            if conditionMet == 4 {
+                Text("조건이 달성되었습니다!")
+                    .font(.title)
+                    .foregroundColor(.green)
+                    .onAppear {
+                        pushNotification(
+                            title: "Hello!",
+                            body: challengeText_4,
+                            seconds: 1,
+                            identifier: "testNotification"
+                        )
+                    }
+                Text(challengeText_4)
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding(.top, 5)
+                
+            }
+            
+            if conditionMet == 5 {
+                Text("조건이 달성되었습니다!")
+                    .font(.title)
+                    .foregroundColor(.green)
+                    .onAppear {
+                        pushNotification(
+                            title: "Hello!",
+                            body: challengeText_5,
+                            seconds: 1,
+                            identifier: "testNotification"
+                        )
+                    }
+                Text(challengeText_5)
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding(.top, 5)
+                
+            }
+            
+            
+            
+            
+            
+            // 버튼으로 조건 변경
+            Button(action: {
+                conditionMet = 1 // 조건 충족
+            }) {
+                Text("조건 1")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            
+            Button(action: {
+                conditionMet = 2 // 조건 충족
+            }) {
+                Text("조건 2")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            
+            Button(action: {
+                conditionMet = 3 // 조건 충족
+            }) {
+                Text("조건 3")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            
+            Button(action: {
+                conditionMet = 4 // 조건 충족
+            }) {
+                Text("조건 4")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            
+            Button(action: {
+                conditionMet = 5 // 조건 충족
+            }) {
+                Text("조건 5")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            
+            
+            
+            
+            
+            
+            Button(action: {
+                conditionMet = 0 // 조건 충족
+            }) {
+                Text("조건 초기화")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
         }
         .padding()
     }
 }
-
+   
 
 #Preview {
     ContentView()

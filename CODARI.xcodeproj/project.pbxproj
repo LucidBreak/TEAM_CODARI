@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4EABA2A92D05D584001FBCE1 /* ProgressViewWithPercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABA2A82D05D584001FBCE1 /* ProgressViewWithPercentage.swift */; };
+		4E635A472D06BC7400B3B697 /* pushNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E635A462D06BC7400B3B697 /* pushNotificationHelper.swift */; };
 		4EEF8BC32CF8449000A09064 /* CODARIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8BC22CF8449000A09064 /* CODARIApp.swift */; };
 		4EEF8BC52CF8449000A09064 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF8BC42CF8449000A09064 /* ContentView.swift */; };
 		4EEF8BC72CF8449400A09064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF8BC62CF8449400A09064 /* Assets.xcassets */; };
@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4EABA2A82D05D584001FBCE1 /* ProgressViewWithPercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewWithPercentage.swift; sourceTree = "<group>"; };
+		4E635A462D06BC7400B3B697 /* pushNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pushNotificationHelper.swift; sourceTree = "<group>"; };
 		4EEF8BBF2CF8449000A09064 /* CODARI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CODARI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EEF8BC22CF8449000A09064 /* CODARIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CODARIApp.swift; sourceTree = "<group>"; };
 		4EEF8BC42CF8449000A09064 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			children = (
 				4EEF8BC22CF8449000A09064 /* CODARIApp.swift */,
 				4EEF8BC42CF8449000A09064 /* ContentView.swift */,
-				4EABA2A82D05D584001FBCE1 /* ProgressViewWithPercentage.swift */,
+				4E635A462D06BC7400B3B697 /* pushNotificationHelper.swift */,
 				4EEF8BC62CF8449400A09064 /* Assets.xcassets */,
 				4EEF8BC82CF8449400A09064 /* Preview Content */,
 			);
@@ -260,9 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E635A472D06BC7400B3B697 /* pushNotificationHelper.swift in Sources */,
 				4EEF8BC52CF8449000A09064 /* ContentView.swift in Sources */,
 				4EEF8BC32CF8449000A09064 /* CODARIApp.swift in Sources */,
-				4EABA2A92D05D584001FBCE1 /* ProgressViewWithPercentage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
